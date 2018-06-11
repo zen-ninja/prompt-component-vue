@@ -9,7 +9,7 @@
 export default {
   name: 'App',
   data: function() {
-    var showPrompt = false
+    var showPrompt
     return {
       prompt: [
         {id: 1, simpleContent: false, icon: 'img/graphic-future-targets.svg', title: 'Target updated!'},
@@ -46,6 +46,10 @@ export default {
 }
 .u-flex-1 {
   flex: 1;
+}
+
+.is-active {
+  display: unset;
 }
 
 .u-flex-v {
@@ -100,6 +104,7 @@ html, body {
 .prompt-wrapper {
   width: 100%;
   height: 100vh;
+  display: none;
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   z-index: 999;

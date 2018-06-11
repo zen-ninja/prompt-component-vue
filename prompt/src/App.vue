@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <prompt v-for="_prompt in prompt" v-bind:showPrompt="showPrompt" v-bind:key="_prompt.id" v-bind:icon="_prompt.icon" v-bind:color="_prompt.color" v-bind:msg="_prompt.title" v-bind:info="_prompt.info" v-bind:btn="_prompt.simpleContent"></prompt>
+    <prompt v-for="_prompt in prompt" v-bind:showPrompt="showPrompt" v-bind:key="_prompt.id" v-bind:icon="_prompt.icon" v-bind:color="_prompt.color" v-bind:msg="_prompt.title" v-bind:info="_prompt.info"></prompt>
   </div>
 </template>
 
@@ -26,15 +26,10 @@ export default {
     this.cyclePrompts()
   },
   methods: {
-    togglePrompt: function() {
-      this.showPrompt = true;
-    },
     cyclePrompts: function() {
-      for (var el=0;el<=6;el++) {
-        setTimeout(function(){
-          this.togglePrompt
-        }, 3000);
-      }
+      setTimeout(function(){
+        this.showPrompt = true;
+      }, 3000);
     }
   }
 }

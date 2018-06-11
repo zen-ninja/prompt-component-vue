@@ -1,12 +1,12 @@
 <template>
-  <div class="prompt-wrapper u-flex-h" v-bind:class="{ 'is-ahidden': !showPrompt }">
+  <div class="prompt-wrapper u-flex-h" v-bind:class="{ 'is-active': showPrompt }">
     <div class="prompt_content u-flex-v">
       <div class="u-flex-v u-flex-1">
         <div class="svg" v-bind:style="{fill:+color+';','background-image':'url( /static/' +icon+')'}"></div>
         <div class="msg"><h2>{{ msg }}</h2></div>
         <div class="info"><p>{{ info }}</p></div>
       </div>
-      <div v-on:click="closePrompt()" class="btn bg-blue u-flex-h u-text-uppercase u-text-white" v-bind:class="{ 'is-hidden': simpleContent }">Got it</div>
+      <div v-on:click="closePrompt" class="btn bg-blue u-flex-h u-text-uppercase u-text-white" v-bind:class="{ 'is-hidden': simpleContent }">Got it</div>
     </div>
   </div>
 </template>
@@ -16,12 +16,8 @@ export default {
   props: ['icon', 'msg', 'info', 'color'],
   data: function() {
     var showPrompt = false, simpleContent = false
-    var svgStyle = {
-      color: '',
-      img: ''
-    }
     return {
-      showPrompt, simpleContent, svgStyle
+      showPrompt, simpleContent
     }
   },
   methods: {
